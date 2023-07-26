@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order{% endblock %}
+
+{% block body %}
+    <h1>Order</h1>
+
+    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Prenotazione</th>
+                <td>{{ table.reservation ? table.reservation|date('d-m-Y H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tavolo</th>
+                <td>{{ order.ntable }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ order.dish }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ order.amount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_order_index') }}">back to list</a>
+
+    <a href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a>
+
+    {{ include('order/_delete_form.html.twig') }}
+{% endblock %}

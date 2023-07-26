@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    
+        <div class="container">
+            <header>
+                <div class="banner">
+                    <img src="https://www.lacertosa.it/wp-content/uploads/2020/07/Ristorante-LaCertosa-C65A7829-1500x630.jpg">
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <div><a href="{{ path('app_table_index') }}">Home</a></div>
+                        </li>
+                        <li>
+                            <div>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <ul>
+                                        <li>
+                                            <a href="/admin">Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout"> Logout</a>
+                                        </li>
+                                    </ul>
+            
+                                {% else %}
+                                    login
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>{% block body %}{% endblock %}</main>
+            <footer>
+                <ul>
+                    <li>
+                        sezione 1
+                    </li>
+                    <li>
+                        sezione 2
+                    </li>
+                    <li>
+                        sezione 3
+                    </li>
+                    <li>
+                        sezione 4
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </body>
+</html>
