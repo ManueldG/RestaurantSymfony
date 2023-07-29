@@ -3,13 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Order;
+use App\Entity\Table;
 use App\Form\OrderType;
 use App\Repository\OrderRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/order')]
 class OrderController extends AbstractController
@@ -25,10 +26,12 @@ class OrderController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_order_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new/{id}', name: 'app_order_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager,Table $table = null): Response
     {
         $order = new Order();
+        $order->setNtable($table);
+        
         $form = $this->createForm(OrderType::class, $order);
         $form->handleRequest($request);
 

@@ -18,7 +18,7 @@ class OrderCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [            
-            AssociationField::new('ntable'),
+            AssociationField::new('ntable','Table'),
             AssociationField::new('dish'),
             NumberField::new('amount')
         ];
