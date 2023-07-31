@@ -22,7 +22,7 @@ class OrderController extends AbstractController
 
 
         return $this->render('order/index.html.twig', [
-            'orders' => $orderRepository->findAll(),
+            'orders' => $orders,
         ]);
     }
 

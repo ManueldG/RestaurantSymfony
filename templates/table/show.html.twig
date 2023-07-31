@@ -28,10 +28,16 @@
                 <td>{{ table.free ? 'Yes' : 'No' }}</td>
             </tr>
             <tr>
-                <th>Piatti</th>
-                {%for order in table.orders  %}
-                    <td>{{ order.dish }} x {{order.amount}} {{order.dish.price}}€  <a href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a></td>
-                {% endfor %}
+                <th class="dishes">Piatti</th>
+                    <td>
+                        <table class="dishes">
+                            {%for order in table.orders  %}
+                                <tr>
+                                    <td class="dish">{{ order.dish }} </td> <td>x {{order.amount}}</td> <td>{{order.dish.price}}€</td>  <td><a href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
             </tr>
         </tbody>
     </table>

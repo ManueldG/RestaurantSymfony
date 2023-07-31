@@ -5,48 +5,26 @@
 {% block body %}
     <h1>Table index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                
-                <th>Number</th>
-                <th>Name</th>
-                <th>People</th>
-                <th>Reservation</th>
-                <th>Free</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for table in tables %}
-        
-            <a href="{{ path('app_table_show', {'id': table.id}) }}">
-                <div class="square">
-                    <ul>
-                        <li>{{ table.number }}</li>
-                        <li>{{ table.name }}</li>
-                    </ul>
-                </div>
-            </a>
-
-            <tr>                
-                <td>{{ table.number }}</td>
-                <td>{{ table.name }}</td>
-                <td>{{ table.people }}</td>
-                <td>{{ table.reservation ? table.reservation|date('d-m-y H:i') : '' }}</td>
-                <td>{{ table.free ? 'Yes' : 'No' }}</td>                
-                <td>
-                    <a href="{{ path('app_table_show', {'id': table.id}) }}">show</a>
-                    <a href="{{ path('app_table_edit', {'id': table.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    
+        <section>
+            {% for table in tables %}
+            
+                <a href="{{ path('app_table_show', {'id': table.id}) }}">
+                    <div class="square">
+                        <ul>
+                            <li>{{ table.number }}</li>
+                            <li>{{ table.name }}</li>
+                        </ul>
+                    </div>
+                </a>
+            
+            {% else %}
+            
+                    no records found
+            
+            {% endfor %}
+        </section>        
 
     <a href="{{ path('app_table_new') }}">Create new</a>
+
 {% endblock %}

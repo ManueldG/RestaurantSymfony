@@ -39,24 +39,39 @@ body {
 
         }
         main{
+            table.dishes{
+                width: 300px;
+            }
+            th.dishes{
+                vertical-align: top;
+            }
             padding: 40px;
-            .square{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: green;
-                margin: 10px;
-                border: 1px solid rgb(75, 69, 69);
-                padding: 5px;                
-                width: 50px;
-                height: 50px;
-                ul{ 
-                    li{
-                        list-style-type: none;
+                section{
+                    display: flex;
+
+                    .square{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: green;
+                        margin: 10px;
+                        border: 1px solid rgb(75, 69, 69);
+                        border-radius: 5px;
+                        padding: 5px;
+                        width: 50px;
+                        height: 50px;
+                        
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        ul{ 
+                            li{
+                                list-style-type: none;
+                            }
+                        }                        
                     }
                 }
-                
-            }
         }
         
 
