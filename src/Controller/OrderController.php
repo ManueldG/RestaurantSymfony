@@ -62,11 +62,13 @@ class OrderController extends AbstractController
     {
         $form = $this->createForm(OrderType::class, $order);
         $form->handleRequest($request);
+        $id = $order->getNtable()->getId();
+        
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_order_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_table_show', ['id' => $id], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('order/edit.html.twig', [
