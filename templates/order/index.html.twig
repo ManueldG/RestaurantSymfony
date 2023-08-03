@@ -19,7 +19,8 @@
         {% for order in orders %}
             <tr>
                 <td>{{ order.ntable }}</td>
-                
+                <td>{{ order.amount }}</td>
+                <td>{{ order.dish }}</td>                
                 <td>
                     <a href="{{ path('app_order_show', {'id': order.id}) }}">show</a>
                     <a href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a>
