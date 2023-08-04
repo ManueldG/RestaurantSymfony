@@ -4,6 +4,30 @@
     margin: 0;
 }
 
+tr{
+    height: 25px;
+}
+
+.btn{
+    padding: 1px 8px;
+    background-color: #e9e9ed;
+    border: solid black 1px;
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    -ms-border-radius:7px;
+    -o-border-radius:7px;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.inline{
+    display: inline;
+}
+
+
 body {
     background-color: lightgray;
     .container {
@@ -98,7 +122,7 @@ body {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
     body {
       font-size: 25px;
       }

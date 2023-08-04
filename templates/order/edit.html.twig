@@ -6,8 +6,8 @@
     <h1>Edit Order</h1>
 
     {{ include('order/_form.html.twig', {'button_label': 'Update'}) }}
-    <a href="{{ path('app_table_new') }}">new table</a>
-    <a href="{{ path('app_order_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_table_new') }}">new table</a>
+    <a class="btn" href="{{ path('app_order_index') }}">back to list</a>
 
     {{ include('order/_delete_form.html.twig') }}
 {% endblock %}

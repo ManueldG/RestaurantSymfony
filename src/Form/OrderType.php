@@ -14,7 +14,8 @@ class OrderType extends AbstractType
         $builder
             ->add('ntable',null,['label' => 'Tavolo'])
             ->add('dish')
-            ->add('amount')           
+            ->add('amount')   
+                    
         ;
     }
 

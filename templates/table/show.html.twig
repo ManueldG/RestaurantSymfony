@@ -48,11 +48,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_table_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_table_index') }}">back to list</a>
 
-    <a href="{{ path('app_table_edit', {'id': table.id}) }}">edit</a>
+    <a class="btn" href="{{ path('app_table_edit', {'id': table.id}) }}">edit</a>
 
-    <a href="{{ path('app_order_new', {'id': table.id}) }}">new order</a>
+    <a class="btn" href="{{ path('app_order_new', {'id': table.id}) }}">new order</a>
 
     {{ include('table/_delete_form.html.twig') }}
 {% endblock %}
