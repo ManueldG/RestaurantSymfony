@@ -10,8 +10,10 @@ tr{
 
 .btn{
     padding: 1px 8px;
+    color: black;
     background-color: #e9e9ed;
     border: solid black 1px;
+    text-decoration: none;
     border-radius:7px;
     -webkit-border-radius:7px;
     -moz-border-radius:7px;
@@ -123,7 +125,7 @@ body {
 }
 
 @media screen and (max-width: 990px) {
-    body {
+    body, button {
       font-size: 25px;
       }
       body .container main section .square{
