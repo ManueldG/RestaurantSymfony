@@ -3,6 +3,7 @@
 {% block title %}Table{% endblock %}
 
 {% block body %}
+
     <h1>Table</h1>
     
     <table class="table">
@@ -31,15 +32,14 @@
                 <th class="dishes">Piatti</th>
                     <td>
                         <table class="dishes">
-                            {%set tot = 0%}
+                            {% set tot = 0 %}
                             
                             {%for order in table.orders  %}
                                 <tr>
                                     <td class="dish">{{ order.dish }} </td> <td>x {{order.amount}}</td> <td>{{order.dish.price}}€</td> <td>Tot {{order.dish.price*order.amount}}€</td>  <td><a class="btn" href="{{ path('app_order_edit', {'id': order.id}) }}">edit</a></td>
                                     {% set tot = tot + (order.dish.price*order.amount) %}
                                 </tr>
-                            {% endfor %}
-                            
+                            {% endfor %}                            
                             
                         </table>
                         TOT: {{ tot }}€
@@ -55,4 +55,5 @@
     <a class="btn" href="{{ path('app_order_new', {'id': table.id}) }}">new order</a>
 
     {{ include('table/_delete_form.html.twig') }}
+
 {% endblock %}
